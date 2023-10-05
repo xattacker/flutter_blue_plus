@@ -109,7 +109,8 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
             NSLog(@"[FBP-iOS] initializing CBCentralManager");
 
             NSDictionary *options = @{
-                CBCentralManagerOptionShowPowerAlertKey: @(YES)
+                // modified by xattacker, in order to disable turn on bluetooth system alert dialog showing
+                CBCentralManagerOptionShowPowerAlertKey: @(NO)
             };
 
             self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:options];
